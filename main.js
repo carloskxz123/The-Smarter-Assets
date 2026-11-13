@@ -81,7 +81,7 @@
     var nav = document.querySelector("[data-nav]");
     var bar = document.querySelector("[data-buybar]");
     var hero = document.querySelector(".hero-cta");
-    var final = document.querySelector("#buy");
+    var final = document.querySelector("#pricing");
     var ticking = false;
 
     function update() {
@@ -265,6 +265,44 @@
     if (y) y.textContent = new Date().getFullYear();
   }
 
+  /* ---------- Scroll progress bar ---------- */
+  function initProgress() {
+    var bar = document.querySelector("[data-progress]");
+    if (!bar) return;
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.setProperty("--p", h > 0 ? Math.min(1, window.scrollY / h).toFixed(4) : 0);
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+  }
+
+  /* ---------- Prices count up when the pricing cards appear ---------- */
+  function initPrices() {
+    var prices = document.querySelectorAll("[data-price]");
+    if (!prices.length) return;
+    function run(el) {
+      if (el.dataset.counted) return;
+      el.dataset.counted = "1";
+      var target = parseInt(el.dataset.price, 10), start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / 900, 1);
+        el.textContent = "$" + Math.round(target * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(step); else el.textContent = "$" + target;
+      }
+      requestAnimationFrame(step);
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } });
+    }, { threshold: 0.01 });
+    prices.forEach(function (el) { io.observe(el); });
+  }
+
   function boot() {
     document.documentElement.classList.remove("no-js");
     safe(initSplit, "split");
@@ -278,6 +316,8 @@
     safe(initCalc, "calc");
     safe(initBuyLinks, "buyLinks");
     safe(initYear, "year");
+    safe(initProgress, "progress");
+    safe(initPrices, "prices");
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);

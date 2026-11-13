@@ -13,12 +13,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20261113a" />
-  <script defer src="manifest.js?v=20261113a"></script>
-  <script defer src="main.js?v=20261113a"></script>
+  <link rel="stylesheet" href="styles.css?v=20261113c" />
+  <script defer src="manifest.js?v=20261113c"></script>
+  <script defer src="main.js?v=20261113c"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" data-progress aria-hidden="true"></div>
 
   <header class="nav" data-nav>
     <a class="brand" href="#top" aria-label="The Smarter Assets — back to top">
@@ -29,9 +30,10 @@
       <a href="#inside">What's inside</a>
       <a href="#pots">Lumpy costs</a>
       <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="btn btn-small" href="https://thesmarterassets.store/l/2in1PaycheckPlanningKit" data-buy>Get the kit</a>
+    <a class="btn btn-small" href="#pricing" data-to-pricing>Get the kit</a>
   </header>
 
   <main id="main">
@@ -42,7 +44,7 @@
         <h1 class="hero-title hero-in" style="--d:.08s">Stop running short <em>before payday.</em></h1>
         <p class="hero-lede hero-in" style="--d:.2s">A 58-page guide and an 11-tab Excel workbook that help you plan what happens to each paycheck <strong>before it lands</strong>, not after it's gone.</p>
         <div class="hero-cta hero-in" style="--d:.3s">
-          <a class="btn btn-primary" href="https://thesmarterassets.store/l/2in1PaycheckPlanningKit" data-buy data-magnetic>
+          <a class="btn btn-primary" href="#pricing" data-to-pricing data-magnetic>
             Get the kit
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
@@ -302,6 +304,84 @@
       </div>
     </section>
 
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+      <div class="pricing-inner">
+        <div class="pricing-head">
+          <p class="eyebrow reveal">Choose your kit</p>
+          <h2 class="section-title" data-split>Pick the part you need. <em>Most people get both.</em></h2>
+          <a class="btn btn-gold btn-big reveal" href="https://kit.thesmarterassets.store/l/2in1PaycheckPlanningKit" data-magnetic>
+            Get the complete kit · $27
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+          <p class="pricing-save reveal"><s>$36</s> separately · Save $9</p>
+          <ul class="trust reveal">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Instant download</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>PDF + XLSX</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Secure checkout via Gumroad</li>
+          </ul>
+        </div>
+
+        <div class="tiers">
+          <article class="tier reveal">
+            <div class="tier-art tier-art-book">
+              <div class="mini-laptop"><img src="gum-preview-1.webp" alt="The Excel Paycheck Workbook dashboard" width="870" height="485" loading="lazy" /></div>
+            </div>
+            <p class="tier-kicker">The workbook</p>
+            <h3>Excel Paycheck Workbook</h3>
+            <p class="tier-desc">The 11-tab workbook that does the math for you.</p>
+            <p class="tier-price"><span data-price="13">$13</span></p>
+            <ul class="tier-list">
+              <li>11 connected tabs, from payday calendar to live dashboard</li>
+              <li>Lumpy-Cost Pots, bill map and Zero Check built in</li>
+              <li>Type in the yellow cells; everything else updates itself</li>
+              <li>XLSX · Microsoft Excel</li>
+            </ul>
+            <a class="btn tier-btn" href="https://kit.thesmarterassets.store/l/ExcelPaycheckWorkbook">Get the workbook <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            <p class="tier-note">Instant download · XLSX</p>
+          </article>
+
+          <article class="tier tier-best reveal">
+            <span class="tier-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>Best value · Most recommended</span>
+            <div class="tier-art tier-art-duo">
+              <div class="mini-laptop"><img src="gum-preview-1.webp" alt="" width="870" height="485" loading="lazy" /></div>
+              <img class="mini-cover" src="guide-cover-hq.webp" alt="The guide and the workbook together" width="780" height="1002" loading="lazy" />
+            </div>
+            <p class="tier-kicker">The complete kit</p>
+            <h3>Guide + Workbook</h3>
+            <p class="tier-desc">Learn the method. Let the workbook do the math.</p>
+            <p class="tier-price"><s>$36</s><span data-price="27">$27</span><b class="tier-save">Save $9</b></p>
+            <ul class="tier-list">
+              <li>Plan It Before Payday guide (58 pages)</li>
+              <li>Excel Paycheck Workbook (11 tabs)</li>
+              <li>Save $9 against buying separately</li>
+              <li>PDF + XLSX · one download</li>
+            </ul>
+            <a class="btn btn-gold tier-btn" href="https://kit.thesmarterassets.store/l/2in1PaycheckPlanningKit">Get the complete kit <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            <p class="tier-note">Instant download · PDF + XLSX</p>
+          </article>
+
+          <article class="tier reveal">
+            <div class="tier-art">
+              <img class="mini-cover mini-cover-solo" src="guide-cover-hq.webp" alt="Cover of the Plan It Before Payday guide" width="780" height="1002" loading="lazy" />
+            </div>
+            <p class="tier-kicker">The guide</p>
+            <h3>Plan It Before Payday</h3>
+            <p class="tier-desc">The 9-step method to plan every paycheck in about 3 hours.</p>
+            <p class="tier-price"><span data-price="23">$23</span></p>
+            <ul class="tier-list">
+              <li>9 steps with worked examples at every stage</li>
+              <li>Troubleshooting for 12 situations, plus partner scripts</li>
+              <li>A 90-day plan and a printable fridge sheet</li>
+              <li>58 pages · PDF</li>
+            </ul>
+            <a class="btn tier-btn" href="https://kit.thesmarterassets.store/l/PaycheckPlanin3hours?layout=profile">Get the guide <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            <p class="tier-note">Instant download · PDF</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- BREATHING ROOM -->
     <section class="calm" aria-label="Breathing room">
       <figure class="calm-figure reveal">
@@ -347,8 +427,8 @@
         <div class="final-copy">
           <h2 class="final-title">Make your next paycheck the first one <em>with a plan.</em></h2>
           <p>58-page guide + 11-tab Excel workbook. Instant download.</p>
-          <a class="btn btn-primary btn-big" href="https://thesmarterassets.store/l/2in1PaycheckPlanningKit" data-buy data-magnetic>
-            Get the kit on Gumroad
+          <a class="btn btn-primary btn-big" href="#pricing" data-to-pricing data-magnetic>
+            Choose your kit
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </div>
@@ -358,13 +438,13 @@
 
   <footer class="footer">
     <p>© <span data-year>2026</span> The Smarter Assets. Educational tools for household budgeting, not financial advice.</p>
-    <a href="https://thesmarterassets.store">More from The Smarter Assets →</a>
+    <a href="https://kit.thesmarterassets.store">More from The Smarter Assets →</a>
   </footer>
 
   <!-- Mobile sticky buy bar -->
   <div class="buybar" data-buybar>
     <span>Plan It Before Payday</span>
-    <a class="btn btn-primary btn-small" href="https://thesmarterassets.store/l/2in1PaycheckPlanningKit" data-buy>Get the kit</a>
+    <a class="btn btn-primary btn-small" href="#pricing" data-to-pricing>Get the kit</a>
   </div>
 </body>
 </html>
